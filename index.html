@@ -3,674 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pilotimmo - Valorisation & Gestion de Patrimoine Locatif</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #0f172a;
-            --secondary: #3b82f6;
-            --accent: #f59e0b;
-            --light: #f8fafc;
-            --text: #334155;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        header {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 1.2rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 3rem;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #fff 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-            color: white;
-            padding: 180px 3rem 120px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            font-weight: 800;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .hero-text h1 span {
-            background: linear-gradient(135deg, #3b82f6, #f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-text p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            animation: fadeInUp 0.8s ease 0.2s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--accent);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .cta-primary {
-            display: inline-block;
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            color: white;
-            padding: 1.2rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-            animation: fadeInUp 0.8s ease 0.3s both;
-        }
-
-        .cta-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
-        }
-
-        .hero-visual {
-            position: relative;
-            animation: fadeIn 1s ease 0.5s both;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .floating-cards {
-            position: relative;
-            height: 400px;
-        }
-
-        .floating-card {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 1.5rem;
-            border-radius: 15px;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .floating-card:nth-child(1) {
-            top: 0;
-            left: 0;
-            animation-delay: 0s;
-        }
-
-        .floating-card:nth-child(2) {
-            top: 100px;
-            right: 50px;
-            animation-delay: 1s;
-        }
-
-        .floating-card:nth-child(3) {
-            bottom: 50px;
-            left: 100px;
-            animation-delay: 2s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            font-weight: 800;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--text);
-            margin-bottom: 4rem;
-            opacity: 0.8;
-        }
-
-        /* Problématiques */
-        .problematiques {
-            background: var(--light);
-        }
-
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .problem-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .problem-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            transform: scaleX(0);
-            transition: transform 0.4s;
-        }
-
-        .problem-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            border-color: var(--secondary);
-        }
-
-        .problem-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .problem-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .problem-card h3 {
-            color: var(--primary);
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .problem-card p {
-            line-height: 1.8;
-        }
-
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: 25px;
-            transition: transform 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-            transition: transform 0.6s;
-        }
-
-        .service-card:hover::before {
-            transform: translate(-25%, -25%);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px) scale(1.02);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .service-card h3 {
-            color: white;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-card ul {
-            list-style: none;
-            position: relative;
-            z-index: 1;
-        }
-
-        .service-card li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            opacity: 0.9;
-        }
-
-        .service-card li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* Processus */
-        .processus {
-            background: linear-gradient(180deg, white 0%, var(--light) 100%);
-        }
-
-        .process-container {
-            position: relative;
-            margin-top: 4rem;
-        }
-
-        .process-line {
-            position: absolute;
-            top: 50px;
-            left: 10%;
-            right: 10%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            z-index: 0;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step {
-            text-align: center;
-            background: white;
-            padding: 2.5rem 1.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            transition: all 0.4s;
-        }
-
-        .step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
-        }
-
-        .step h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        /* Contact */
-        .contact {
-            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
-            color: white;
-            border-radius: 30px;
-            padding: 80px 60px;
-            margin: 50px 3rem;
-            max-width: 1400px;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        .contact-info h2 {
-            color: white;
-            text-align: left;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-info p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .contact-features {
-            list-style: none;
-        }
-
-        .contact-features li {
-            padding: 1rem 0;
-            padding-left: 2.5rem;
-            position: relative;
-            font-size: 1.1rem;
-        }
-
-        .contact-features li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .contact-form {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .submit-button {
-            width: 100%;
-            background: linear-gradient(135deg, var(--accent), #f97316);
-            color: white;
-            padding: 1.2rem;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 3rem;
-            text-align: center;
-        }
-
-        footer p {
-            opacity: 0.8;
-            margin: 0.5rem 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .floating-cards {
-                display: none;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-steps {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .process-line {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 0 1.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 140px 1.5rem 80px;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            section {
-                padding: 60px 1.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .contact {
-                padding: 40px 30px;
-                margin: 30px 1.5rem;
-            }
-
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <meta name="description" content="Pilotimmo - Expert en valorisation de patrimoine locatif. Nous transformons vos biens complexes (vacances, DPE, héritage) en actifs rentables.">
+    <meta name="keywords" content="gestion locative, valorisation immobilière, passoire énergétique, DPE, vacance locative, gestion patrimoine">
+    <meta name="author" content="Pilotimmo">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pilotimmo.fr/">
+    <meta property="og:title" content="Pilotimmo - Valorisation Patrimoine Locatif">
+    <meta property="og:description" content="Expert en valorisation de biens complexes : passoires énergétiques, vacances, charges impayés, héritages">
+    
+    <title>Pilotimmo - Valorisation & Gestion de Patrimoine Locatif | Expert Biens Complexes</title>
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">PILOTIMMO</div>
             <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#problematiques">Problématiques</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#processus">Processus</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="partenaires.html">Partenaires</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="recrutement.html">Recrutement</a></li>
+                <li><a href="contact.html" class="cta-nav">Contact</a></li>
             </ul>
+            <button class="mobile-menu-btn">☰</button>
         </nav>
     </header>
 
-    <section id="accueil" class="hero">
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <!-- Remplacez hero-placeholder.jpg par votre image -->
+        <img src="images/hero-bg.jpg" alt="Immeubles valorisés par Pilotimmo" class="hero-bg" loading="lazy">
+        
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Transformez vos <span>biens difficiles</span> en actifs rentables</h1>
-                <p>Expert en valorisation de patrimoine locatif : vacance, passoires énergétiques, charges élevées... Nous pilotons votre patrimoine pour maximiser sa performance.</p>
-                <a href="#contact" class="cta-primary">Diagnostic Gratuit</a>
+                <h1>Transformez vos <span>biens complexes</span> en actifs rentables</h1>
+                <p>Expert en valorisation de patrimoine locatif : passoires énergétiques, vacances, charges impayés, héritages... Nous pilotons votre patrimoine pour maximiser sa performance.</p>
+                <a href="contact.html" class="cta-primary">Diagnostic Gratuit</a>
                 
                 <div class="hero-stats">
                     <div class="stat">
@@ -689,25 +61,23 @@
             </div>
             
             <div class="hero-visual">
-                <div class="floating-cards">
-                    <div class="floating-card">
-                        <strong>🏚️ Bien vacant</strong><br>
-                        → Reloué en 45j
+                <div class="avant-apres-showcase">
+                    <div class="showcase-card">
+                        <img src="images/avant-apres/bien1-avant.jpg" alt="Appartement avant rénovation" loading="lazy">
+                        <div class="showcase-label avant">Avant</div>
                     </div>
-                    <div class="floating-card">
-                        <strong>⚡ DPE G</strong><br>
-                        → Rénové en C
-                    </div>
-                    <div class="floating-card">
-                        <strong>💰 Charges -40%</strong><br>
-                        → Rentabilité +25%
+                    <div class="showcase-arrow">→</div>
+                    <div class="showcase-card">
+                        <img src="images/avant-apres/bien1-apres.jpg" alt="Appartement après rénovation" loading="lazy">
+                        <div class="showcase-label apres">Après</div>
                     </div>
                 </div>
+                <p class="showcase-caption">Rénovation énergétique - DPE G → D - Reloué en 30 jours</p>
             </div>
         </div>
     </section>
 
-    <section id="problematiques" class="problematiques">
+    <section class="problematiques">
         <h2>Vos Problématiques, Nos Solutions</h2>
         <p class="section-subtitle">Nous intervenons sur tous les freins à la rentabilité de votre patrimoine</p>
         
@@ -738,7 +108,7 @@
         </div>
     </section>
 
-    <section id="services">
+    <section class="services-preview">
         <h2>Notre Expertise à Votre Service</h2>
         <p class="section-subtitle">Un accompagnement global pour transformer vos biens en actifs performants</p>
         
@@ -746,45 +116,31 @@
             <div class="service-card">
                 <span class="service-icon">🎯</span>
                 <h3>Valorisation de Biens</h3>
-                <ul>
-                    <li>Audit patrimonial complet</li>
-                    <li>Diagnostic des blocages</li>
-                    <li>Plan de valorisation sur mesure</li>
-                    <li>Pilotage des travaux</li>
-                    <li>Optimisation fiscale</li>
-                    <li>Stratégie de repositionnement</li>
-                </ul>
+                <p>Audit patrimonial, diagnostic des blocages, plan de valorisation sur mesure, pilotage des travaux et optimisation fiscale.</p>
+                <a href="services.html" class="service-link">En savoir plus →</a>
             </div>
             
             <div class="service-card">
                 <span class="service-icon">🔑</span>
                 <h3>Gestion Locative</h3>
-                <ul>
-                    <li>Recherche locataires qualifiés</li>
-                    <li>État des lieux & baux</li>
-                    <li>Gestion loyers et charges</li>
-                    <li>Suivi entretien & travaux</li>
-                    <li>Relation locataire quotidienne</li>
-                    <li>Contentieux si nécessaire</li>
-                </ul>
+                <p>Recherche de locataires qualifiés, états des lieux, gestion des loyers, suivi d'entretien et relation locataire quotidienne.</p>
+                <a href="services.html" class="service-link">En savoir plus →</a>
             </div>
             
             <div class="service-card">
                 <span class="service-icon">📊</span>
                 <h3>Pilotage Patrimonial</h3>
-                <ul>
-                    <li>Tableaux de bord en temps réel</li>
-                    <li>Reporting financier détaillé</li>
-                    <li>Conseil stratégie patrimoniale</li>
-                    <li>Veille réglementaire & fiscale</li>
-                    <li>Anticipation des évolutions</li>
-                    <li>Optimisation continue</li>
-                </ul>
+                <p>Tableaux de bord en temps réel, reporting financier détaillé, conseil stratégique et veille réglementaire continue.</p>
+                <a href="services.html" class="service-link">En savoir plus →</a>
             </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="services.html" class="cta-secondary">Découvrir tous nos services</a>
         </div>
     </section>
 
-    <section id="processus" class="processus">
+    <section class="processus">
         <h2>Notre Méthode en 4 Étapes</h2>
         <p class="section-subtitle">Une approche structurée pour des résultats mesurables</p>
         
@@ -818,147 +174,192 @@
         </div>
     </section>
 
-    <div id="contact" class="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2>Prêt à Valoriser Votre Patrimoine ?</h2>
-                <p>Obtenez un diagnostic gratuit et personnalisé de votre situation en moins de 48h.</p>
-                
-                <ul class="contact-features">
-                    <li>Analyse gratuite et sans engagement</li>
-                    <li>Réponse sous 48h maximum</li>
-                    <li>Devis détaillé et transparent</li>
-                    <li>Accompagnement personnalisé</li>
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, Target, Users, TrendingUp, Shield } from "lucide-react";
+
+const ClientTypesSection = () => {
+  return (
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-foreground mb-6">
+            Qui sommes-nous ?
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Allo Logement s'adresse à deux profils complémentaires pour créer un écosystème 
+            gagnant-gagnant dans l'immobilier difficile.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Investisseurs */}
+          <Card id="investisseurs" className="card-bg shadow-card hover:shadow-hover transition-all duration-300 border-2 border-primary/20">
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  Vous êtes investisseur
+                </h3>
+                <p className="text-muted-foreground">
+                  Vous recherchez des opportunités d'investissement à fort potentiel
+                </p>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start space-x-3">
+                  <Target className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Biens sélectionnés</p>
+                    <p className="text-sm text-muted-foreground">Accédez à notre portefeuille de biens à fort potentiel de plus-value</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Shield className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Accompagnement complet</p>
+                    <p className="text-sm text-muted-foreground">De l'acquisition à la valorisation, nous gérons toute la chaîne</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <TrendingUp className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Rentabilité optimisée</p>
+                    <p className="text-sm text-muted-foreground">Stratégies d'investissement adaptées à vos objectifs</p>
+                  </div>
+                </div>
+              </div>
+
+              <Button variant="default" className="w-full" size="lg">
+                <span>Découvrir nos opportunités</span>
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Propriétaires */}
+          <Card id="proprietaires" className="card-bg shadow-card hover:shadow-hover transition-all duration-300 border-2 border-secondary/20">
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  Vous êtes propriétaire
+                </h3>
+                <p className="text-muted-foreground">
+                  Votre bien pose problème et vous cherchez des solutions
+                </p>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start space-x-3">
+                  <Shield className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Solutions sur-mesure</p>
+                    <p className="text-sm text-muted-foreground">Diagnostic et plan d'action adaptés à votre situation</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Target className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Gestion déléguée</p>
+                    <p className="text-sm text-muted-foreground">Nous prenons en charge tous les aspects problématiques</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Users className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Rachat possible</p>
+                    <p className="text-sm text-muted-foreground">Option de rachat de votre bien si c'est la meilleure solution</p>
+                  </div>
+                </div>
+              </div>
+
+              <Button variant="secondary" className="w-full" size="lg">
+                <span>Demander un diagnostic</span>
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ClientTypesSection;
+
+
+    
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Prêt à Valoriser Votre Patrimoine ?</h2>
+            <p>Obtenez un diagnostic gratuit et personnalisé de votre situation en moins de 48h.</p>
+            <a href="contact.html" class="cta-primary">Demander Mon Diagnostic Gratuit</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>PILOTIMMO</h4>
+                <p>Expert en valorisation et gestion de patrimoine locatif</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="partenaires.html">Partenaires</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
                 </ul>
             </div>
             
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="nom">Nom et Prénom *</label>
-                    <input type="text" id="nom" name="nom" required>
+            <div class="footer-section">
+                <h4>Ressources</h4>
+                <ul>
+                    <li><a href="recrutement.html">Recrutement</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cgu.html">CGU</a></li>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email : contact@pilotimmo.fr</p>
+                <p>Tél : 01 XX XX XX XX</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Facebook">f</a>
                 </div>
-                
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telephone">Téléphone *</label>
-                    <input type="tel" id="telephone" name="telephone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Décrivez votre situation *</label>
-                    <textarea id="message" name="message" required placeholder="Type de bien, localisation, problématiques rencontrées..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-button">Demander Mon Diagnostic Gratuit</button>
-            </form>
+            </div>
         </div>
-    </div>
-
-    <footer>
-        <p><strong>PILOTIMMO</strong> - Valorisation & Gestion de Patrimoine Locatif</p>
-        <p>Expert en biens difficiles : vacance, rénovation énergétique, optimisation de charges</p>
-        <p style="margin-top: 1rem; opacity: 0.6;">&copy; 2025 Pilotimmo. Tous droits réservés.</p>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pilotimmo. Tous droits réservés.</p>
+        </div>
     </footer>
 
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offset = 80;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Form handling
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('✅ Merci pour votre demande ! Nous vous contacterons dans les 48h.');
-            this.reset();
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.problem-card, .service-card, .step').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(el);
-        });
-
-        // Header scroll effect
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            const header = document.querySelector('header');
-            
-            if (currentScroll > 100) {
-                header.style.padding = '0.8rem 0';
-                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
-            } else {
-                header.style.padding = '1.2rem 0';
-                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Counter animation for stats
-        function animateCounter(element, target, duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = target + (element.textContent.includes('+') ? '+' : '') + (element.textContent.includes('%') ? '%' : '');
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(start) + (element.textContent.includes('+') ? '+' : '') + (element.textContent.includes('%') ? '%' : '');
-                }
-            }, 16);
-        }
-
-        // Trigger counter animation when stats are visible
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumbers = document.querySelectorAll('.stat-number');
-                    animateCounter(statNumbers[0], 95);
-                    animateCounter(statNumbers[1], 30);
-                    animateCounter(statNumbers[2], 200);
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const heroStats = document.querySelector('.hero-stats');
-        if (heroStats) {
-            statsObserver.observe(heroStats);
-        }
+    <script src="script.js"></script>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Pilotimmo",
+      "description": "Expert en valorisation de patrimoine locatif et gestion de biens complexes",
+      "url": "https://pilotimmo.fr",
+      "telephone": "01-XX-XX-XX-XX",
+      "email": "contact@pilotimmo.fr",
+      "areaServed": "France",
+      "priceRange": "€€"
+    }
     </script>
 </body>
 </html>
