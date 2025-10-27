@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pilotimmo - Expert en valorisation de patrimoine locatif. Nous transformons vos biens complexes (Passoires Energetiques, DPE, biens vacants, succession, charges importants) en actifs rentables.">
+    <meta name="description" content="Pilotimmo - Expert en valorisation de patrimoine locatif. Nous transformons vos biens difficiles (vacance, DPE, charges élevées) en actifs rentables.">
     <meta name="keywords" content="gestion locative, valorisation immobilière, passoire énergétique, DPE, vacance locative, gestion patrimoine">
     <meta name="author" content="Pilotimmo">
     
@@ -36,8 +36,8 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Transformez vos <span>biens complexes</span> en actifs rentables</h1>
-                <p>Expert en valorisation de patrimoine locatif : passoires énergétiques, biens vacants, successions, charges impayés... Nous pilotons votre patrimoine pour maximiser sa performance.</p>
+                <h1>Transformez vos <span>biens difficiles</span> en actifs rentables</h1>
+                <p>Expert en valorisation de patrimoine locatif : vacance, passoires énergétiques, charges élevées... Nous pilotons votre patrimoine pour maximiser sa performance.</p>
                 <a href="contact.html" class="cta-primary">Diagnostic Gratuit</a>
                 
                 <div class="hero-stats">
@@ -114,42 +114,21 @@
             <div class="service-card">
                 <span class="service-icon">🎯</span>
                 <h3>Valorisation de Biens</h3>
-                <ul>
-                    <li>Audit patrimonial complet</li>
-                    <li>Diagnostic des blocages</li>
-                    <li>Plan de valorisation sur mesure</li>
-                    <li>Pilotage des travaux</li>
-                    <li>Optimisation fiscale</li>
-                    <li>Stratégie de repositionnement</li>
-                </ul>
+                <p>Audit patrimonial, diagnostic des blocages, plan de valorisation sur mesure, pilotage des travaux et optimisation fiscale.</p>
                 <a href="services.html" class="service-link">En savoir plus →</a>
             </div>
             
             <div class="service-card">
                 <span class="service-icon">🔑</span>
                 <h3>Gestion Locative</h3>
-                <ul>
-                    <li>Recherche locataires qualifiés</li>
-                    <li>État des lieux & baux</li>
-                    <li>Gestion loyers et charges</li>
-                    <li>Suivi entretien & travaux</li>
-                    <li>Relation locataire quotidienne</li>
-                    <li>Contentieux si nécessaire</li>
-                </ul>
+                <p>Recherche de locataires qualifiés, états des lieux, gestion des loyers, suivi d'entretien et relation locataire quotidienne.</p>
                 <a href="services.html" class="service-link">En savoir plus →</a>
             </div>
             
             <div class="service-card">
                 <span class="service-icon">📊</span>
                 <h3>Pilotage Patrimonial</h3>
-                <ul>
-                    <li>Tableaux de bord en temps réel</li>
-                    <li>Reporting financier détaillé</li>
-                    <li>Conseil stratégie patrimoniale</li>
-                    <li>Veille réglementaire & fiscale</li>
-                    <li>Anticipation des évolutions</li>
-                    <li>Optimisation continue</li>
-                </ul>
+                <p>Tableaux de bord en temps réel, reporting financier détaillé, conseil stratégique et veille réglementaire continue.</p>
                 <a href="services.html" class="service-link">En savoir plus →</a>
             </div>
         </div>
@@ -193,193 +172,13 @@
         </div>
     </section>
 
-// ClientTypesSection.tsx
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Target, Users, TrendingUp, Shield } from "lucide-react";
-
-const ClientTypesSection = () => {
-  return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">
-            Qui sommes-nous ?
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Allo Logement s'adresse à deux profils complémentaires pour créer un écosystème 
-            gagnant-gagnant dans l'immobilier difficile.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Investisseurs */}
-          <Card id="investisseurs" className="card-bg shadow-card hover:shadow-hover transition-all duration-300 border-2 border-primary/20">
-            <CardContent className="p-8">
-              <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">
-                  Vous êtes investisseur
-                </h3>
-                <p className="text-muted-foreground">
-                  Vous recherchez des opportunités d'investissement à fort potentiel
-                </p>
-              </div>
-
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start space-x-3">
-                  <Target className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-foreground">Biens sélectionnés</p>
-                    <p className="text-sm text-muted-foreground">Accédez à notre portefeuille de biens à fort potentiel de plus-value</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Shield className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-foreground">Accompagnement complet</p>
-                    <p className="text-sm text-muted-foreground">De l'acquisition à la valorisation, nous gérons toute la chaîne</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <TrendingUp className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-foreground">Rentabilité optimisée</p>
-                    <p className="text-sm text-muted-foreground">Stratégies d'investissement adaptées à vos objectifs</p>
-                  </div>
-                </div>
-              </div>
-
-              <Button variant="default" className="w-full group" size="lg">
-                <span>Découvrir nos opportunités</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Propriétaires */}
-          <Card id="proprietaires" className="card-bg shadow-card hover:shadow-hover transition-all duration-300 border-2 border-secondary/20">
-            <CardContent className="p-8">
-              <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">
-                  Vous êtes propriétaire
-                </h3>
-                <p className="text-muted-foreground">
-                  Votre bien pose problème et vous cherchez des solutions
-                </p>
-              </div>
-
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start space-x-3">
-                  <Shield className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-foreground">Solutions sur-mesure</p>
-                    <p className="text-sm text-muted-foreground">Diagnostic et plan d'action adaptés à votre situation</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Target className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-foreground">Gestion déléguée</p>
-                    <p className="text-sm text-muted-foreground">Nous prenons en charge tous les aspects problématiques</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Users className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-foreground">Rachat possible</p>
-                    <p className="text-sm text-muted-foreground">Option de rachat de votre bien si c'est la meilleure solution</p>
-                  </div>
-                </div>
-              </div>
-
-              <Button variant="secondary" className="w-full group" size="lg">
-                <span>Demander un diagnostic</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default ClientTypesSection;
-
-<section class="avantages">
-        <h2>Pourquoi Choisir Pilotimmo ?</h2>
-        <div class="avantages-grid">
-            <div class="avantage">
-                <div class="avantage-icon">🎯</div>
-                <h3>Expertise Spécialisée</h3>
-                <p>Spécialistes de la valorisation de biens complexes et difficiles à louer</p>
-            </div>
-            <div class="avantage">
-                <div class="avantage-icon">📊</div>
-                <h3>Transparence Totale</h3>
-                <p>Reporting détaillé et accès permanent à vos données patrimoniales</p>
-            </div>
-            <div class="avantage">
-                <div class="avantage-icon">💡</div>
-                <h3>Approche Personnalisée</h3>
-                <p>Chaque bien est unique, nos solutions aussi</p>
-            </div>
-            <div class="avantage">
-                <div class="avantage-icon">⚙️</div>
-                <h3>Gestion Complète</h3>
-                <p>De la valorisation au pilotage quotidien, nous gérons tout</p>
-            </div>
-        </div>
-    </section>
-
-
-
-    
     <section class="cta-section">
         <div class="cta-content">
             <h2>Prêt à Valoriser Votre Patrimoine ?</h2>
             <p>Obtenez un diagnostic gratuit et personnalisé de votre situation en moins de 48h.</p>
-           
-                <ul class="contact-features">
-                    <li>Analyse gratuite et sans engagement</li>
-                    <li>Réponse sous 48h maximum</li>
-                    <li>Devis détaillé et transparent</li>
-                    <li>Accompagnement personnalisé</li>
-                </ul>
-            </div>
-            
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="nom">Nom et Prénom *</label>
-                    <input type="text" id="nom" name="nom" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telephone">Téléphone *</label>
-                    <input type="tel" id="telephone" name="telephone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Décrivez votre situation *</label>
-                    <textarea id="message" name="message" required placeholder="Type de bien, localisation, problématiques rencontrées..."></textarea>
-                </div>
-                
-                <button type="submit" class="submit-button">Demander Mon Diagnostic Gratuit</button>
-            </form>
+            <a href="contact.html" class="cta-primary">Demander Mon Diagnostic Gratuit</a>
         </div>
-   </section>
-
+    </section>
 
     <footer>
         <div class="footer-content">
@@ -442,5 +241,4 @@ export default ClientTypesSection;
     </script>
 </body>
 </html>
-
 
