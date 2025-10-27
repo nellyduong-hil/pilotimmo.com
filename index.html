@@ -174,6 +174,7 @@
         </div>
     </section>
 
+// ClientTypesSection.tsx
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Target, Users, TrendingUp, Shield } from "lucide-react";
@@ -232,9 +233,9 @@ const ClientTypesSection = () => {
                 </div>
               </div>
 
-              <Button variant="default" className="w-full" size="lg">
+              <Button variant="default" className="w-full group" size="lg">
                 <span>Découvrir nos opportunités</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </CardContent>
           </Card>
@@ -278,9 +279,9 @@ const ClientTypesSection = () => {
                 </div>
               </div>
 
-              <Button variant="secondary" className="w-full" size="lg">
+              <Button variant="secondary" className="w-full group" size="lg">
                 <span>Demander un diagnostic</span>
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </CardContent>
           </Card>
@@ -291,6 +292,7 @@ const ClientTypesSection = () => {
 };
 
 export default ClientTypesSection;
+
 
 
     
