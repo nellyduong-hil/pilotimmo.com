@@ -741,4 +741,31 @@ footer img:hover,
   }
 }
 
+/* Menu mobile caché par défaut */
+.nav-links {
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Menu mobile visible */
+.nav-links.nav-active {
+  max-height: 500px; /* assez grand pour contenir tous les liens */
+  opacity: 1;
+}
+
+/* Bouton mobile visible sur petit écran */
+@media (max-width: 992px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+}
+
 
