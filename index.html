@@ -174,6 +174,126 @@
         </div>
     </section>
 
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, Target, Users, TrendingUp, Shield } from "lucide-react";
+
+const ClientTypesSection = () => {
+  return (
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-foreground mb-6">
+            Qui sommes-nous ?
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Allo Logement s'adresse à deux profils complémentaires pour créer un écosystème 
+            gagnant-gagnant dans l'immobilier difficile.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Investisseurs */}
+          <Card id="investisseurs" className="card-bg shadow-card hover:shadow-hover transition-all duration-300 border-2 border-primary/20">
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  Vous êtes investisseur
+                </h3>
+                <p className="text-muted-foreground">
+                  Vous recherchez des opportunités d'investissement à fort potentiel
+                </p>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start space-x-3">
+                  <Target className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Biens sélectionnés</p>
+                    <p className="text-sm text-muted-foreground">Accédez à notre portefeuille de biens à fort potentiel de plus-value</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Shield className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Accompagnement complet</p>
+                    <p className="text-sm text-muted-foreground">De l'acquisition à la valorisation, nous gérons toute la chaîne</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <TrendingUp className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Rentabilité optimisée</p>
+                    <p className="text-sm text-muted-foreground">Stratégies d'investissement adaptées à vos objectifs</p>
+                  </div>
+                </div>
+              </div>
+
+              <Button variant="default" className="w-full" size="lg">
+                <span>Découvrir nos opportunités</span>
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Propriétaires */}
+          <Card id="proprietaires" className="card-bg shadow-card hover:shadow-hover transition-all duration-300 border-2 border-secondary/20">
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  Vous êtes propriétaire
+                </h3>
+                <p className="text-muted-foreground">
+                  Votre bien pose problème et vous cherchez des solutions
+                </p>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start space-x-3">
+                  <Shield className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Solutions sur-mesure</p>
+                    <p className="text-sm text-muted-foreground">Diagnostic et plan d'action adaptés à votre situation</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Target className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Gestion déléguée</p>
+                    <p className="text-sm text-muted-foreground">Nous prenons en charge tous les aspects problématiques</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Users className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground">Rachat possible</p>
+                    <p className="text-sm text-muted-foreground">Option de rachat de votre bien si c'est la meilleure solution</p>
+                  </div>
+                </div>
+              </div>
+
+              <Button variant="secondary" className="w-full" size="lg">
+                <span>Demander un diagnostic</span>
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ClientTypesSection;
+
+
+    
     <section class="cta-section">
         <div class="cta-content">
             <h2>Prêt à Valoriser Votre Patrimoine ?</h2>
