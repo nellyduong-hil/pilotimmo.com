@@ -1,1 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez nos services : valorisation de biens difficiles, gestion locative complète et pilotage patrimonial. Solutions sur-mesure pour maximiser votre rentabilité.">
+    <meta name="keywords" content="valorisation immobilière, gestion locative, pilotage patrimoine, audit immobilier, rénovation énergétique">
+    <title>Nos Services - Pilotimmo | Valorisation, Gestion & Pilotage Patrimoine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PILOTIMMO</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="partenaires.html">Partenaires</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="recrutement.html">Recrutement</a></li>
+                <li><a href="contact.html" class="cta-nav">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </nav>
+    </header>
 
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Nos Services</h1>
+            <p>Un accompagnement complet pour transformer vos biens difficiles en actifs performants</p>
+        </div>
+    </section>
+
+    <section class="service-detail">
+        <div class="service-detail-grid">
+            <div class="service-detail-image">
+                <img src="images/services/valorisation.jpg" alt="Audit et valorisation immobilière" loading="lazy">
+            </div>
+            <div class="service-detail-content">
+                <span class="service-badge">Service #1</span>
+                <h2>🎯 Valorisation de Biens</h2>
+                <p class="service-intro">Vous avez un bien qui ne se loue pas ? Un DPE catastrophique ? Des charges qui plombent votre rentabilité ? Nous analysons, diagnostiquons et mettons en place un plan d'action concret.</p>
+                
+                <h3>Ce que nous faisons pour vous :</h3>
+                <ul class="service-list">
+                    <li><strong>Audit patrimonial complet</strong> - Analyse détaillée de votre bien, de son environnement et de son potentiel</li>
+                    <li><strong>Diagnostic des blocages</strong> - Identification précise des freins à la location (prix, état, DPE, charges...)</li>
+                    <li><strong>Plan de valorisation sur mesure</strong> - Stratégie personnalisée avec objectifs chiffrés et planning</li>
+                    <li><strong>Accompagnement travaux</strong> - Sélection d'artisans, suivi de chantier, réception des travaux</li>
+                    <li><strong>Optimisation fiscale</strong> - Dispositifs Denormandie, MaPrimeRénov', déficit foncier...</li>
+                    <li><strong>Stratégie de repositionnement</strong> - Nouveau positionnement prix/marché pour maximiser l'attractivité</li>
+                </ul>
+
+                <div class="service-results">
+                    <h3>Résultats typiques :</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-number">+35%</span>
+                            <span class="result-label">Rentabilité moyenne</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">45j</span>
+                            <span class="result-label">Délai moyen de relocation</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">-40%</span>
+                            <span class="result-label">Réduction charges copro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail alternate">
+        <div class="service-detail-grid">
+            <div class="service-detail-content">
+                <span class="service-badge">Service #2</span>
+                <h2>🔑 Gestion Locative Complète</h2>
+                <p class="service-intro">Déléguez la gestion quotidienne de votre patrimoine à des experts. Nous prenons en charge l'intégralité de la relation locative pour vous libérer du temps et sécuriser vos revenus.</p>
+                
+                <h3>Notre accompagnement inclut :</h3>
+                <ul class="service-list">
+                    <li><strong>Recherche de locataires qualifiés</strong> - Diffusion annonce multi-supports, visites, sélection rigoureuse</li>
+                    <li><strong>Constitution du dossier</strong> - Vérification solvabilité, garanties, assurances</li>
+                    <li><strong>États des lieux détaillés</strong> - Entrée et sortie avec photos et constat contradictoire</li>
+                    <li><strong>Rédaction et signature des baux</strong> - Conformité légale, clauses protectrices</li>
+                    <li><strong>Gestion des loyers et charges</strong> - Encaissement, relances, régularisation annuelle</li>
+                    <li><strong>Suivi entretien et travaux</strong> - Coordination interventions, devis, suivi budget</li>
+                    <li><strong>Relation locataire quotidienne</strong> - Disponibilité, réactivité, médiation si nécessaire</li>
+                    <li><strong>Gestion des contentieux</strong> - Procédures amiables et judiciaires si besoin</li>
+                </ul>
+
+                <div class="service-pricing">
+                    <h3>Tarification transparente :</h3>
+                    <p>À partir de <strong>7% HT</strong> des loyers encaissés (selon volume de patrimoine)</p>
+                    <p class="pricing-note">Honoraires dégressifs à partir de 5 biens gérés</p>
+                </div>
+            </div>
+            <div class="service-detail-image">
+                <img src="images/services/gestion.jpg" alt="Gestion locative professionnelle" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section class="service-detail">
+        <div class="service-detail-grid">
+            <div class="service-detail-image">
+                <img src="images/services/pilotage.jpg" alt="Pilotage patrimonial et reporting" loading="lazy">
+            </div>
+            <div class="service-detail-content">
+                <span class="service-badge">Service #3</span>
+                <h2>📊 Pilotage Patrimonial</h2>
+                <p class="service-intro">Au-delà de la gestion quotidienne, nous pilotons votre stratégie patrimoniale à moyen et long terme. Tableaux de bord, reporting financier et conseil stratégique pour optimiser en continu.</p>
+                
+                <h3>Les outils de pilotage :</h3>
+                <ul class="service-list">
+                    <li><strong>Tableau de bord en temps réel</strong> - Accès 24/7 à vos KPIs (taux d'occupation, rentabilité, charges...)</li>
+                    <li><strong>Reporting financier mensuel</strong> - Synthèse revenus/dépenses, cash-flow, provisions</li>
+                    <li><strong>Analyse comparative</strong> - Benchmarking avec le marché, identification opportunités</li>
+                    <li><strong>Conseil stratégie patrimoniale</strong> - Arbitrages, investissements, optimisation fiscale</li>
+                    <li><strong>Veille réglementaire et fiscale</strong> - Anticipation des évolutions (DPE, loi Climat, fiscalité...)</li>
+                    <li><strong>Planification travaux</strong> - Budget pluriannuel, priorisation investissements</li>
+                    <li><strong>Bilan annuel détaillé</strong> - Rendez-vous stratégique, performance globale, projections</li>
+                </ul>
+
+                <div class="service-highlight">
+                    <h3>🎁 Inclus dans l'offre :</h3>
+                    <p>✓ Espace client personnalisé (accès web + mobile)<br>
+                    ✓ Alertes automatiques (loyers impayés, travaux urgents...)<br>
+                    ✓ Support prioritaire WhatsApp Business<br>
+                    ✓ 2 rendez-vous stratégiques par an</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-packages">
+        <h2>Nos Formules</h2>
+        <p class="section-subtitle">Choisissez l'accompagnement adapté à vos besoins</p>
+
+        <div class="packages-grid">
+            <div class="package-card">
+                <h3>Valorisation</h3>
+                <p class="package-price">Sur devis</p>
+                <p class="package-desc">Idéal pour remettre un bien difficile sur le marché</p>
+                <ul>
+                    <li>Audit complet</li>
+                    <li>Plan d'action détaillé</li>
+                    <li>Suivi travaux</li>
+                    <li>Durée : 3-6 mois</li>
+                </ul>
+                <a href="contact.html" class="package-btn">Demander un devis</a>
+            </div>
+
+            <div class="package-card featured">
+                <div class="popular-badge">Le plus populaire</div>
+                <h3>Gestion Complète</h3>
+                <p class="package-price">7% HT</p>
+                <p class="package-desc">Gestion locative + Pilotage patrimonial</p>
+                <ul>
+                    <li>Tout le service Gestion</li>
+                    <li>Tableau de bord en ligne</li>
+                    <li>Reporting mensuel</li>
+                    <li>Conseil stratégique</li>
+                    <li>Support prioritaire</li>
+                </ul>
+                <a href="contact.html" class="package-btn primary">Démarrer maintenant</a>
+            </div>
+
+            <div class="package-card">
+                <h3>Sur Mesure</h3>
+                <p class="package-price">Personnalisé</p>
+                <p class="package-desc">Solution adaptée à votre patrimoine</p>
+                <ul>
+                    <li>Services à la carte</li>
+                    <li>Volume important (10+ biens)</li>
+                    <li>Besoins spécifiques</li>
+                    <li>Tarifs dégressifs</li>
+                </ul>
+                <a href="contact.html" class="package-btn">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-process">
+        <h2>Comment Ça Marche ?</h2>
+        <p class="section-subtitle">Un processus simple et transparent</p>
+
+        <div class="process-timeline">
+            <div class="timeline-step">
+                <div class="timeline-number">1</div>
+                <h3>Premier Contact</h3>
+                <p>Échange téléphonique ou visio pour comprendre votre situation et vos objectifs</p>
+                <span class="timeline-duration">30 min</span>
+            </div>
+
+            <div class="timeline-step">
+                <div class="timeline-number">2</div>
+                <h3>Audit & Diagnostic</h3>
+                <p>Visite du bien, analyse documentaire, étude de marché et diagnostic complet</p>
+                <span class="timeline-duration">1-2 semaines</span>
+            </div>
+
+            <div class="timeline-step">
+                <div class="timeline-number">3</div>
+                <h3>Proposition</h3>
+                <p>Présentation du plan d'action, budget détaillé, planning et signature du mandat</p>
+                <span class="timeline-duration">1 semaine</span>
+            </div>
+
+            <div class="timeline-step">
+                <div class="timeline-number">4</div>
+                <h3>Mise en Œuvre</h3>
+                <p>Déploiement des actions, coordination des intervenants, suivi régulier</p>
+                <span class="timeline-duration">Variable</span>
+            </div>
+
+            <div class="timeline-step">
+                <div class="timeline-number">5</div>
+                <h3>Pilotage Continu</h3>
+                <p>Reporting, optimisations, ajustements pour maximiser la performance</p>
+                <span class="timeline-duration">En continu</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Prêt à Optimiser Votre Patrimoine ?</h2>
+            <p>Obtenez un diagnostic gratuit et découvrez comment nous pouvons valoriser vos biens.</p>
+            <a href="contact.html" class="cta-primary">Demander un Diagnostic Gratuit</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>PILOTIMMO</h4>
+                <p>Expert en valorisation et gestion de patrimoine locatif</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="partenaires.html">Partenaires</a></li>
+                    <li><a href="a-propos.html">À propos</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Ressources</h4>
+                <ul>
+                    <li><a href="recrutement.html">Recrutement</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cgu.html">CGU</a></li>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email : contact@pilotimmo.fr</p>
+                <p>Tél : 01 XX XX XX XX</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Facebook">f</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pilotimmo. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
